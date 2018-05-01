@@ -1,6 +1,6 @@
 #include <windows.h>
 
-const char g_szClassName[] = "myWindowClass";
+const char g_szClassName[] = "windowClass";
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
