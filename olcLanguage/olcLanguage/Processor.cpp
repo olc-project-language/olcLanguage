@@ -56,7 +56,31 @@ void Processor::RunClock() {
 			break;
 
 		case CommandType::Goto:
-			index = address + ram.commands[index].Value;
+			index = index + ram.commands[index].Value;
+			break;
+		case CommandType::BranchEqual:
+			if(zBit)
+				index = index + ram.commands[index].Value;
+			break;
+		case CommandType::BranchNotEqual:
+			if (!zBit)
+				index = index + ram.commands[index].Value;
+			break;
+		case CommandType::BranchGreater:
+			if (!zBit && !nBit)
+				index = index + ram.commands[index].Value;
+			break;
+		case CommandType::BranchGreaterEqual:
+			if (!nBit)
+				index = index + ram.commands[index].Value;
+			break;
+		case CommandType::BranchLess:
+			if (nBit)
+				index = index + ram.commands[index].Value;
+			break;
+		case CommandType::BranchLessEqual:
+			if (nBit || zBit)
+				index = index + ram.commands[index].Value;
 			break;
 
 		case CommandType::Print:

@@ -1,10 +1,6 @@
-﻿  Source.cpp
-e:\john\coding\visual studio\olclanguage\olclanguage\olclanguage\source.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-e:\john\coding\visual studio\olclanguage\olclanguage\olclanguage\source.cpp(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-e:\john\coding\visual studio\olclanguage\olclanguage\olclanguage\processor.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-e:\john\coding\visual studio\olclanguage\olclanguage\olclanguage\source.cpp(27): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+﻿E:\Visual Studio 2017\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (olcLanguage.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Source.cpp
+e:\john\coding\visual studio\olclanguage\olclanguage\olclanguage\source.cpp(48): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: see declaration of 'getch'
-e:\john\coding\visual studio\olclanguage\olclanguage\olclanguage\source.cpp(30): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: see declaration of 'getch'
-  olcLanguage.vcxproj -> E:\John\Coding\Visual Studio\olcLanguage\olcLanguage\Debug\olcLanguage.exe
-  olcLanguage.vcxproj -> E:\John\Coding\Visual Studio\olcLanguage\olcLanguage\Debug\olcLanguage.pdb (Partial PDB)
+  olcLanguage.vcxproj -> E:\John\Coding\Visual Studio\olcLanguage\olcLanguage\Debug\olcLanguageVirtualMachine.exe
+  olcLanguage.vcxproj -> E:\John\Coding\Visual Studio\olcLanguage\olcLanguage\Debug\olcLanguageVirtualMachine.pdb (Partial PDB)

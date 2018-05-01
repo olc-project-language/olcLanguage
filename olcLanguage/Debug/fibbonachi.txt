@@ -1,0 +1,21 @@
+LoadC : 1;
+Store : 0;
+Store : 1;
+
+Load  : 0;
+Print;
+
+Add   : 1;
+Store : 2;
+
+Load  : 1;
+Store : 0;
+
+Load  : 2;
+Store : 1;
+
+Load  : 0;
+AddC  : -2000000000;
+Blt   : -11;
+
+Terminate;

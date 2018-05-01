@@ -1,30 +1,53 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <conio.h>
-#include "Memory.h";
-#include "Processor.h";
+#include "Memory.h"
+#include "Processor.h"
+#include "AssemblyInterpreter.h"
+
+std::string slurp(std::ifstream* in) {
+	std::stringstream sstr;
+	sstr << in->rdbuf();
+	return sstr.str();
+}
 
 // This is the virtual machine that runs a pre-compiled program
 // Please 
-int main() {
+int main(int argc,      // Number of strings in array argv  
+		 char *argv[],   // Array of command-line argument strings  
+		 char *envp[]) {
+
+	InitializeInterpretation();
+
+	std::string data = "Terminate;";
+
+	if (argc >= 2) {
+		std::ifstream assembly;
+		assembly.open(argv[1]);
+		if (assembly.is_open()) {
+			std::ifstream * assemblyPtr = &assembly;
+			data = slurp(assemblyPtr);
+		}
+		assembly.close();
+	}
+	else {
+		std::cout << "I would suggest opening a text file containing\nassembly code" << std::endl;
+		getch();
+		return 0;
+	}
+
 	Memory m;
-	m.commands = new Command[9]{
-		Command(Load, 0), // Print A
-		Command(Print, 0),
-		Command(Add, 1), // C = A + B
-		Command(Store, 2),
-		Command(Load, 1), // A = B
-		Command(Store, 0),
-		Command(Load, 2), // B = C
-		Command(Store, 1),
-		Command(Goto, -1),
-	};
-	m.ram = new int[3]{ 1, 1, 0 };
+	m.commands = InterpretString(data);
+	m.ram = new int[300];
 
 	Processor p(m, 0);
 
-	while (p.active) {
+	int max_ticks = 30000;
+	int ticks = 0;
+	while (p.active && ticks < max_ticks) {
 		p.RunClock();
-		getch();
+		ticks++;
 	}
 
 	getch();

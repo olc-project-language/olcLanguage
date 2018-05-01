@@ -37,6 +37,16 @@ struct Command {
 		T = t;
 		Value = value;
 	}
+
+	Command(CommandType t) {
+		T = t;
+		Value = 0;
+	}
+
+	Command() {
+		T = CommandType::Terminate;
+		Value = 0;
+	}
 };
 
 class Memory {

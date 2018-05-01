@@ -1,0 +1,3 @@
+LoadC : 5;
+Print;
+Terminate;
